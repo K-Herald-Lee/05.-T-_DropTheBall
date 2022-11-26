@@ -6,9 +6,16 @@ public class Dongle : MonoBehaviour
 {
     public bool isDrag;
     Rigidbody2D rigid;
+    public int level;
+    Animator anim;
 
     private void Awake() {
-        rigid = GetComponent<Rigidbody2D>();        
+        rigid = GetComponent<Rigidbody2D>();   
+        anim = GetComponent<Animator>();   
+    }
+
+    private void OnEnable() {
+        anim.SetInteger("Level", level);
     }
 
     // Update is called once per frame
@@ -37,7 +44,7 @@ public class Dongle : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, mousePos, 0.2f);
         }        
     }
-    
+
     public void Drag()
     {
         isDrag = true;
