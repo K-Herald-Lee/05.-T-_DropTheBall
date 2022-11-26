@@ -9,6 +9,8 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+DongleFamily_v1.0_BackUpThisFolder_ButDontShipItWithYourGame\
+DongleFamily_v1.0_BurstDebugInformation_DoNotShip\
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
