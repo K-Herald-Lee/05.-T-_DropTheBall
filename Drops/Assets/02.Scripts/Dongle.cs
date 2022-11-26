@@ -8,6 +8,7 @@ public class Dongle : MonoBehaviour
     public ParticleSystem effect;
     public bool isDrag;
     public bool isMerge;
+    public bool isAttach;
     Rigidbody2D rigid;
     CircleCollider2D circle;
     public int level;
@@ -64,6 +65,23 @@ public class Dongle : MonoBehaviour
         isDrag = false;
         rigid.simulated = true;
     }
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        StartCoroutine(AttachRoutine());        
+    }
+
+    IEnumerator AttachRoutine()
+    {
+        if (isAttach)
+        {
+            yield break;
+        }
+        isAttach = true;
+        manager.SfxPlay(GameManager.sfx.Attach);
+        yield return new WaitForSeconds(0.2f);
+        isAttach = false;
+    }
+
     // collision with other dongle
     private void OnCollisionStay2D(Collision2D collider) 
     {
@@ -134,6 +152,7 @@ public class Dongle : MonoBehaviour
             if(target == Vector3.up * 100){                
                 //manupulated value coming from game manager for the case of game over
                 transform.localScale = Vector3.Lerp(transform.position, Vector3.zero, 0.2f);
+                manager.SfxPlay(GameManager.sfx.LevelUP);
                 PlayEffect();
             } else {
                 transform.position = Vector3.Lerp(transform.position, target, 0.1f);                
@@ -159,6 +178,7 @@ public class Dongle : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         anim.SetInteger("Level", level+1);
         PlayEffect();
+        manager.SfxPlay(GameManager.sfx.LevelUP);
         yield return new WaitForSeconds(0.25f);        
         level++; // avoid to multiple level up
         manager.maxLevel = Mathf.Max(level, manager.maxLevel);
