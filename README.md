@@ -8,3 +8,6 @@ Android-based casual puzzle game developed with unity
   - Version: 3.3.0
 - Visual Studio Code
   - Version: 1.73.1
+  
+## Preview
+![image](https://user-images.githubusercontent.com/118697338/204076649-7319fc1b-90e0-4f79-99c5-54eca23b668b.png)
