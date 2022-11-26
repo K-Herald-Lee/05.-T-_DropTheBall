@@ -197,11 +197,16 @@ public class Dongle : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         anim.SetInteger("Level", level+1);
-        PlayEffect();
         manager.SfxPlay(GameManager.sfx.LevelUP);
         yield return new WaitForSeconds(0.25f);        
         level++; // avoid to multiple level up
         manager.maxLevel = Mathf.Max(level, manager.maxLevel);
+
+        if (level > 6){
+            yield return new WaitForSeconds(1f);
+            Hide(transform.position);
+        }
+        PlayEffect();
     }
 
     void PlayEffect()
