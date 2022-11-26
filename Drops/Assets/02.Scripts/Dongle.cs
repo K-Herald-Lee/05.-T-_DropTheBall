@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Dongle : MonoBehaviour
 {
+    public GameManager manager;
     public bool isDrag;
+    public bool isMerge;
     Rigidbody2D rigid;
+    CircleCollider2D circle;
     public int level;
     Animator anim;
 
     private void Awake() {
         rigid = GetComponent<Rigidbody2D>();   
+        circle = GetComponent<CircleCollider2D>();   
         anim = GetComponent<Animator>();   
     }
 
@@ -55,5 +59,74 @@ public class Dongle : MonoBehaviour
     {
         isDrag = false;
         rigid.simulated = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collider) 
+    {
+        if(collider.gameObject.tag == "Dongle"){
+            Dongle other = collider.gameObject.GetComponent<Dongle>();
+
+            //dongle merge logic
+            if(level == other.level && 
+            !isMerge && 
+            !other.isMerge && 
+            level < 7 && 
+            other.level < 7){
+                //Get x,y position
+                float myPositionX = transform.position.x;
+                float myPositionY = transform.position.y;
+                float otherPositionX = other.transform.position.x;
+                float otherPositionY = other.transform.position.y;
+
+                if (myPositionY >= otherPositionY ||
+                (myPositionY >= otherPositionY && myPositionX > otherPositionX)){
+                    //hide opponent
+                    other.Hide(transform.position);
+                    
+                    //level up myself
+                    LevelUp();
+                }
+
+            }
+        } 
+    }
+    public void Hide(Vector3 target)
+    {
+        isMerge = true;
+        rigid.simulated = false;
+        circle.enabled = false;
+
+        StartCoroutine(HideRoutine(target));
+        isMerge = false;
+    }
+
+    IEnumerator HideRoutine(Vector3 target)
+    {
+        int frameCnt = 0;
+        while(frameCnt < 20){
+            frameCnt++;
+            transform.position = Vector3.Lerp(transform.position, target, 0.1f);
+            yield return null;
+        }        
+        gameObject.SetActive(false);
+    }
+
+    void LevelUp()
+    {
+        isMerge = true;
+        rigid.velocity = Vector2.zero;
+        rigid.angularVelocity = 0f;
+
+        StartCoroutine(LevelUpRoutine());
+        isMerge = false;
+    }
+
+    IEnumerator LevelUpRoutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.SetInteger("Level", level+1);
+        yield return new WaitForSeconds(0.25f);        
+        level++; // avoid to multiple level up
+        manager.maxLevel = Mathf.Max(level, manager.maxLevel);
     }
 }
