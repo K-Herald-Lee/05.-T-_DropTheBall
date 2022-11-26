@@ -142,6 +142,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         isGameOver = true;
+        bgmPlayer.Stop();
+        SfxPlay(sfx.GameOver);    
         gameoverGroup.SetActive(true);
         StartCoroutine(GameOverRoutine());
     }
@@ -153,13 +155,11 @@ public class GameManager : MonoBehaviour
             dongleList[index].Hide(Vector3.up * 100);
             yield return new WaitForSeconds(0.1f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         if (score > PlayerPrefs.GetInt("BestScore")){
             PlayerPrefs.SetInt("BestScore",score);
         }
-        textSubScore.text = "점수: " + score.ToString();
-        bgmPlayer.Stop();
-        SfxPlay(sfx.GameOver);             
+        textSubScore.text = "점수: " + score.ToString();                 
     }
 
     public void Restart()

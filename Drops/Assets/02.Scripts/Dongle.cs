@@ -130,6 +130,11 @@ public class Dongle : MonoBehaviour
                         LevelUp();
                     }
                 }
+
+                //when its level reaches 7, hide touched other dongles
+                if (level > 6){
+                    other.Hide(transform.position);
+                }
             } 
         }        
     }
