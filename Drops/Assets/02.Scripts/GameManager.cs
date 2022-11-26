@@ -156,8 +156,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (score > PlayerPrefs.GetInt("BestScore")){
             PlayerPrefs.SetInt("BestScore",score);
-            textSubScore.text = "점수: " + score.ToString();
         }
+        textSubScore.text = "점수: " + score.ToString();
         bgmPlayer.Stop();
         SfxPlay(sfx.GameOver);             
     }
