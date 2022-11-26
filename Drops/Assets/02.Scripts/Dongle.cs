@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dongle : MonoBehaviour
 {
     public GameManager manager;
+    public ParticleSystem effect;
     public bool isDrag;
     public bool isMerge;
     Rigidbody2D rigid;
@@ -61,7 +62,7 @@ public class Dongle : MonoBehaviour
         rigid.simulated = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collider) 
+    private void OnCollisionStay2D(Collision2D collider) 
     {
         if(collider.gameObject.tag == "Dongle"){
             Dongle other = collider.gameObject.GetComponent<Dongle>();
@@ -125,8 +126,16 @@ public class Dongle : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         anim.SetInteger("Level", level+1);
+        PlayEffect();
         yield return new WaitForSeconds(0.25f);        
         level++; // avoid to multiple level up
         manager.maxLevel = Mathf.Max(level, manager.maxLevel);
+    }
+
+    void PlayEffect()
+    {
+        effect.transform.position = transform.position;
+        effect.transform.localScale = transform.localScale;
+        effect.Play();
     }
 }

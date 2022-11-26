@@ -5,8 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Dongle lastDongle;
+    
     public GameObject donglePrefab;
     public Transform dongleGroup;
+
+    public GameObject effectPrefab;
+    public Transform effectGroup;
+
     public int maxLevel;
     
     private void Awake() 
@@ -18,16 +23,25 @@ public class GameManager : MonoBehaviour
         GenDongle();
     }
 
-    Dongle GetNextDongle()
+    Dongle InitDongle()
     {
+        // init effect
+        GameObject instantEffectObj = Instantiate(effectPrefab, effectGroup);
+        ParticleSystem instantEffect = instantEffectObj.GetComponent<ParticleSystem>();
+
+        // init dongle
         GameObject instant = Instantiate(donglePrefab, dongleGroup);
         Dongle instantDongle = instant.GetComponent<Dongle>();
+        
+        // pairing
+        instantDongle.effect = instantEffect;
+
         return instantDongle;
     }  
 
     void GenDongle()
     {
-        Dongle newDongle = GetNextDongle();
+        Dongle newDongle = InitDongle();
         lastDongle = newDongle;
         lastDongle.manager = this;
         lastDongle.level = Random.Range(0, maxLevel);
