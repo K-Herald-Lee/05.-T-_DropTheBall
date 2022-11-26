@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Transform effectGroup;
 
     public int maxLevel;
+    public int score;
+    public bool isGameOver;
     
     private void Awake() 
     {
@@ -41,13 +43,15 @@ public class GameManager : MonoBehaviour
 
     void GenDongle()
     {
-        Dongle newDongle = InitDongle();
-        lastDongle = newDongle;
-        lastDongle.manager = this;
-        lastDongle.level = Random.Range(0, maxLevel);
-        lastDongle.gameObject.SetActive(true);
+        if(!isGameOver){
+            Dongle newDongle = InitDongle();
+            lastDongle = newDongle;
+            lastDongle.manager = this;
+            lastDongle.level = Random.Range(0, maxLevel);
+            lastDongle.gameObject.SetActive(true);
 
-        StartCoroutine(WaitNext());
+            StartCoroutine(WaitNext());
+        }        
     }
 
     IEnumerator WaitNext()
@@ -73,5 +77,26 @@ public class GameManager : MonoBehaviour
             lastDongle.Drop();
             lastDongle = null;
         }        
+    }
+
+    public void GameOver()
+    {
+        if(isGameOver){
+            return;
+        }
+        isGameOver = true;
+
+        StartCoroutine(GameOverRoutine());
+        
+        // print score
+    }
+    IEnumerator GameOverRoutine()
+    {
+        // destroy every dongles
+        Dongle[] dongleList = FindObjectsOfType<Dongle>();
+        for(int index=0; index<dongleList.Length; index++){
+            dongleList[index].Hide(Vector3.up * 100);
+            yield return new WaitForSeconds(0.1f);
+        }             
     }
 }

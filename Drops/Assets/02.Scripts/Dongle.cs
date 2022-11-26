@@ -11,12 +11,15 @@ public class Dongle : MonoBehaviour
     Rigidbody2D rigid;
     CircleCollider2D circle;
     public int level;
+    float deadTime;
     Animator anim;
+    SpriteRenderer spriteRenderer;
 
     private void Awake() {
         rigid = GetComponent<Rigidbody2D>();   
         circle = GetComponent<CircleCollider2D>();   
         anim = GetComponent<Animator>();   
+        spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
     private void OnEnable() {
@@ -61,35 +64,57 @@ public class Dongle : MonoBehaviour
         isDrag = false;
         rigid.simulated = true;
     }
-
+    // collision with other dongle
     private void OnCollisionStay2D(Collision2D collider) 
     {
-        if(collider.gameObject.tag == "Dongle"){
-            Dongle other = collider.gameObject.GetComponent<Dongle>();
+        if(!manager.isGameOver) {   //do not merge after game over
+            if(collider.gameObject.tag == "Dongle"){
+                Dongle other = collider.gameObject.GetComponent<Dongle>();
 
-            //dongle merge logic
-            if(level == other.level && 
-            !isMerge && 
-            !other.isMerge && 
-            level < 7 && 
-            other.level < 7){
-                //Get x,y position
-                float myPositionX = transform.position.x;
-                float myPositionY = transform.position.y;
-                float otherPositionX = other.transform.position.x;
-                float otherPositionY = other.transform.position.y;
+                //dongle merge logic
+                if(level == other.level && 
+                !isMerge && 
+                !other.isMerge && 
+                level < 7 && 
+                other.level < 7){
+                    //Get x,y position
+                    float myPositionX = transform.position.x;
+                    float myPositionY = transform.position.y;
+                    float otherPositionX = other.transform.position.x;
+                    float otherPositionY = other.transform.position.y;
 
-                if (myPositionY >= otherPositionY ||
-                (myPositionY >= otherPositionY && myPositionX > otherPositionX)){
-                    //hide opponent
-                    other.Hide(transform.position);
-                    
-                    //level up myself
-                    LevelUp();
+                    if (myPositionY >= otherPositionY ||
+                    (myPositionY >= otherPositionY && myPositionX > otherPositionX)){
+                        //hide opponent
+                        other.Hide(transform.position);
+                        
+                        //level up myself
+                        LevelUp();
+                    }
                 }
-
+            } 
+        }        
+    }
+    // trigger with the finish line
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if (other.gameObject.tag == "Finish"){
+            deadTime += Time.deltaTime;
+            if (deadTime > 2){
+                spriteRenderer.color = new Color(0.9f, 0.2f, 0.2f);
             }
-        } 
+            if (deadTime > 5){
+                manager.GameOver();
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "Finish"){
+            deadTime = 0;
+            spriteRenderer.color = Color.white;
+        }
+        
     }
     public void Hide(Vector3 target)
     {
@@ -105,8 +130,14 @@ public class Dongle : MonoBehaviour
     {
         int frameCnt = 0;
         while(frameCnt < 20){
-            frameCnt++;
-            transform.position = Vector3.Lerp(transform.position, target, 0.1f);
+            frameCnt++;            
+            if(target == Vector3.up * 100){                
+                //manupulated value coming from game manager for the case of game over
+                transform.localScale = Vector3.Lerp(transform.position, Vector3.zero, 0.2f);
+                PlayEffect();
+            } else {
+                transform.position = Vector3.Lerp(transform.position, target, 0.1f);                
+            }            
             yield return null;
         }        
         gameObject.SetActive(false);
@@ -119,6 +150,7 @@ public class Dongle : MonoBehaviour
         rigid.angularVelocity = 0f;
 
         StartCoroutine(LevelUpRoutine());
+        manager.score += (int)Mathf.Pow(2, level);
         isMerge = false;
     }
 
