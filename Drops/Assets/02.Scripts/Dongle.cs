@@ -16,15 +16,35 @@ public class Dongle : MonoBehaviour
     Animator anim;
     SpriteRenderer spriteRenderer;
 
-    private void Awake() {
+    private void Awake() 
+    {
         rigid = GetComponent<Rigidbody2D>();   
         circle = GetComponent<CircleCollider2D>();   
         anim = GetComponent<Animator>();   
         spriteRenderer = GetComponent<SpriteRenderer>();   
     }
 
-    private void OnEnable() {
+    private void OnEnable() 
+    {
         anim.SetInteger("Level", level);
+    }
+
+    private void OnDisable() 
+    {
+        // init all values and settings
+        level = 0;
+        isDrag = false;
+        isMerge = false;
+        isAttach = false;
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.zero;
+
+        rigid.simulated = false;
+        rigid.velocity = Vector2.zero;
+        rigid.angularVelocity = 0f;
+        circle.enabled = true;        
     }
 
     // Update is called once per frame

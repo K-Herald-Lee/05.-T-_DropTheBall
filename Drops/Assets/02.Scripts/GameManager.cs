@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Dongle lastDongle;
-    
+    public Dongle lastDongle;    
     public GameObject donglePrefab;
     public Transform dongleGroup;
+    public List<Dongle> donglePool;
 
     public GameObject effectPrefab;
     public Transform effectGroup;
+    public List<ParticleSystem> effectPool;
+
+    [Range(1,30)]
+    public int poolSize;
+    public int poolIndex;
 
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
@@ -25,6 +30,12 @@ public class GameManager : MonoBehaviour
     private void Awake() 
     {
         Application.targetFrameRate = 60;
+        effectPool = new List<ParticleSystem>();
+        donglePool = new List<Dongle>();
+        for(int index=0; index<poolSize; index++){
+            MakeDongle();
+        }
+
     }
     void Start()
     {
@@ -32,28 +43,41 @@ public class GameManager : MonoBehaviour
         GenDongle();
     }
 
-    Dongle InitDongle()
+    Dongle MakeDongle()
     {
         // init effect
         GameObject instantEffectObj = Instantiate(effectPrefab, effectGroup);
+        instantEffectObj.name = "Effect" + effectPool.Count;
         ParticleSystem instantEffect = instantEffectObj.GetComponent<ParticleSystem>();
+        effectPool.Add(instantEffect);
 
         // init dongle
         GameObject instant = Instantiate(donglePrefab, dongleGroup);
+        instant.name = "Dongle" + donglePool.Count;
         Dongle instantDongle = instant.GetComponent<Dongle>();
+        instantDongle.manager = this;
+        donglePool.Add(instantDongle);
         
         // pairing
         instantDongle.effect = instantEffect;
-
         return instantDongle;
+    }
+
+    Dongle InitDongle()
+    {
+        for(int index=0; index<donglePool.Count; index++){
+            poolIndex = (poolIndex + 1) % donglePool.Count;
+            if(!donglePool[poolIndex].gameObject.activeSelf){
+                return donglePool[poolIndex];
+            }
+        }
+        return MakeDongle();
     }  
 
     void GenDongle()
     {
         if(!isGameOver){
-            Dongle newDongle = InitDongle();
-            lastDongle = newDongle;
-            lastDongle.manager = this;
+            lastDongle = InitDongle();
             lastDongle.level = Random.Range(0, maxLevel);
             lastDongle.gameObject.SetActive(true);
             
