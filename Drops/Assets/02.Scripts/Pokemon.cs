@@ -15,11 +15,11 @@ public class Pokemon
         this.name = p.name;
         this.image = p.image;
         this.grade = p.grade;
-        if(!PlayerPrefs.HasKey("unlock")){
+        if(!PlayerPrefs.HasKey(this.name+"unlock")){
             this.unlock = true;
-            PlayerPrefs.SetInt("unlock",1);
+            PlayerPrefs.SetInt(this.name+"unlock",1);
         } else {
-            if(PlayerPrefs.GetInt("unlock") == 1){
+            if(PlayerPrefs.GetInt(this.name+"unlock") == 1){
                 this.unlock = true;
             } else {
                 this.unlock = false;

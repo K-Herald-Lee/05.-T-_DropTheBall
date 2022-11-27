@@ -10,6 +10,24 @@ public class PokemonManager : MonoBehaviour
     public GameObject gradePool;
     public GameObject imagePokemon;
     
+    private void Awake() 
+    {
+        for(int i=0; i<gradePoolList.Count; i++){ 
+            for (int j=0; j<gradePoolList[i].GetComponent<PokemonSelector>().pool.Count; j++){
+                Pokemon pokemon = gradePoolList[i].GetComponent<PokemonSelector>().pool[j];
+                if (PlayerPrefs.HasKey(pokemon.name+"unlock")){
+                    if (PlayerPrefs.GetInt(pokemon.name+"unlock")==1){
+                        pokemon.unlock = true;
+                    } else {
+                        pokemon.unlock = false;
+                    }
+                } else {
+                    pokemon.unlock = false;
+                    PlayerPrefs.SetInt(pokemon.name+"unlock", 0);
+                }
+            }
+        }        
+    }
     public void GetPokemon()
     {
         //int ball = PlayerPrefs.GetInt("pokeballCnt");
@@ -20,6 +38,8 @@ public class PokemonManager : MonoBehaviour
             Pokemon pokemon = gradePool.GetComponent<PokemonSelector>().PickPokemon();
 
             imagePokemon.GetComponent<Image>().sprite = pokemon.image;
+            pokemon.unlock = true;
+            PlayerPrefs.SetInt(pokemon.name+"unlock",1);
 
         //    PlayerPrefs.SetInt("pokeballCnt",ball);
         //}
@@ -36,8 +56,7 @@ public class PokemonManager : MonoBehaviour
             i = 1;
         } else {
             i = 2;            
-        }
-        
+        }        
         return gradePoolList[i];
     }
     

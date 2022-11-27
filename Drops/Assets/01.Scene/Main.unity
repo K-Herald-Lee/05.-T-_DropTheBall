@@ -239,7 +239,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 360, y: 360}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &136153257
 MonoBehaviour:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 596396c8f6d949b49b7de74a0bfc2445, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1590,7 +1590,7 @@ Transform:
   m_Children:
   - {fileID: 2113357422}
   - {fileID: 1113479715}
-  - {fileID: 963900809}
+  - {fileID: 963900810}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   - {fileID: 1113479714}
   - {fileID: 963900807}
   gradePool: {fileID: 0}
-  image: {fileID: 1783845974}
+  imagePokemon: {fileID: 1783845974}
 --- !u!1 &697173594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,7 +2104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &803988528
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2459,8 +2459,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 963900809}
+  - component: {fileID: 963900810}
   - component: {fileID: 963900808}
+  - component: {fileID: 963900809}
   m_Layer: 0
   m_Name: Rare
   m_TagString: Untagged
@@ -2481,20 +2482,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool:
-  - name: "\uBBA4"
+  - name: M
     image: {fileID: 0}
     grade: Common
     unlock: 0
-  - name: "\uBBA4\uCE20"
+  - name: MS
     image: {fileID: 0}
     grade: Common
     unlock: 0
-  - name: "\uBA54\uD0C8\uBA54\uD0C0\uBABD"
+  - name: MT
     image: {fileID: 0}
     grade: Common
     unlock: 0
---- !u!4 &963900809
-Transform:
+--- !u!222 &963900809
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963900807}
+  m_CullTransparentMesh: 1
+--- !u!224 &963900810
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2508,6 +2517,11 @@ Transform:
   m_Father: {fileID: 611031258}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1063340645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,15 +2731,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool:
-  - name: "\uB77C\uC774\uCE04"
+  - name: L
     image: {fileID: 0}
     grade: Common
     unlock: 0
-  - name: "\uAC70\uBD81\uC655"
+  - name: T
     image: {fileID: 0}
     grade: Common
     unlock: 0
-  - name: "\uB9AC\uC790\uBABD"
+  - name: R
     image: {fileID: 0}
     grade: Common
     unlock: 0
@@ -3258,7 +3272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265892871
@@ -3396,7 +3410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1327884440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3758,6 +3772,7 @@ GameObject:
   - component: {fileID: 1523800883}
   - component: {fileID: 1523800885}
   - component: {fileID: 1523800884}
+  - component: {fileID: 1523800886}
   m_Layer: 5
   m_Name: Group_DisplayPokemon
   m_TagString: Untagged
@@ -3826,6 +3841,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523800882}
   m_CullTransparentMesh: 1
+--- !u!114 &1523800886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523800882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c6041615ba01c4e8b81c73a709d5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradePoolList:
+  - {fileID: 2113357421}
+  - {fileID: 1113479714}
+  - {fileID: 963900807}
+  image: {fileID: 136153255}
+  spriteNull: {fileID: 0}
+  listCursor: 0
 --- !u!1 &1536163401
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,7 +4237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783845975}
   - component: {fileID: 1783845977}
-  - component: {fileID: 1783845976}
+  - component: {fileID: 1783845978}
   m_Layer: 5
   m_Name: ImagePokemon
   m_TagString: Untagged
@@ -4228,10 +4262,18 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 360, y: 360}
+  m_AnchoredPosition: {x: 0, y: -60}
+  m_SizeDelta: {x: 360, y: 392}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1783845976
+--- !u!222 &1783845977
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783845974}
+  m_CullTransparentMesh: 1
+--- !u!114 &1783845978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4261,14 +4303,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1783845977
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783845974}
-  m_CullTransparentMesh: 1
 --- !u!1 &1887375141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,7 +4551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1919004624
@@ -4788,7 +4822,7 @@ MonoBehaviour:
   textBestScore: {fileID: 485797448}
   textSubScore: {fileID: 525557908}
   line: {fileID: 225424005}
-  pokeballCnt: 0
+  pokeballCnt: 10
 --- !u!4 &2096814135
 Transform:
   m_ObjectHideFlags: 0
@@ -4853,15 +4887,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool:
-  - name: "\uD53C\uCE74\uCE04"
+  - name: P
     image: {fileID: 21300000, guid: b676c22570a879a4ea34800ac6dda482, type: 3}
     grade: Common
     unlock: 0
-  - name: "\uAF2C\uBD80\uAE30"
+  - name: W
     image: {fileID: 21300000, guid: 0a1064ef918c04640a2ddaf2f309bb99, type: 3}
     grade: Common
     unlock: 0
-  - name: "\uD30C\uC774\uB9AC"
+  - name: F
     image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
     grade: Common
     unlock: 0
