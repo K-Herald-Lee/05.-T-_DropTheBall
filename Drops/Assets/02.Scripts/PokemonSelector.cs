@@ -6,9 +6,10 @@ public class PokemonSelector : MonoBehaviour
 {
     public List<Pokemon> pool = new List<Pokemon>();
 
-    public void PickPokemon()
+    public Pokemon PickPokemon()
     {
         Pokemon tmp = pool[Random.Range(0,pool.Count)];
         Debug.Log("Catch " + tmp.name);
+        return tmp;
     }
 }

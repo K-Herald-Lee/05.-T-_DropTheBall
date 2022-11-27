@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PokemonManager : MonoBehaviour
 {
     public enum type {Common, Uncommon, Rare};
     public List<GameObject> gradePoolList;
     public GameObject gradePool;
+    public GameObject imagePokemon;
     
     public void GetPokemon()
     {
-        int ball = PlayerPrefs.GetInt("pokeballCnt");
-        if (ball > 0){
-            ball--;
+        //int ball = PlayerPrefs.GetInt("pokeballCnt");
+        //if (ball > 0){
+        //    ball--;
             gradePool = setPool();
             Debug.Log(gradePool.gameObject.name);
-            gradePool.GetComponent<PokemonSelector>().PickPokemon();
-            PlayerPrefs.SetInt("pokeballCnt",ball);
-        }
+            Pokemon pokemon = gradePool.GetComponent<PokemonSelector>().PickPokemon();
+
+            imagePokemon.GetComponent<Image>().sprite = pokemon.image;
+
+        //    PlayerPrefs.SetInt("pokeballCnt",ball);
+        //}
         
     }
     public GameObject setPool()

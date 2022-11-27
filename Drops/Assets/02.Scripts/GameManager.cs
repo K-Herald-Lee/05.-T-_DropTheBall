@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     [Header("----------[ UI ]")]
     public GameObject gameoverGroup;
     public GameObject titleGroup;
+    public GameObject pokemonDisplayGroup;
+    public GameObject pokemonDrawGroup;
     public Text textScore;
     public Text textBestScore;
     public Text textSubScore;
@@ -76,6 +78,27 @@ public class GameManager : MonoBehaviour
         SfxPlay(sfx.Button);
         bgmPlayer.Play();        
         GenDongle();
+    }
+    public void Menu()
+    {
+        SfxPlay(sfx.Button);
+        pokemonDisplayGroup.SetActive(false);
+        pokemonDrawGroup.SetActive(false);
+        titleGroup.SetActive(true);
+    }
+
+    public void ShowPokemon()
+    {
+        SfxPlay(sfx.Button);
+        titleGroup.SetActive(false);
+        pokemonDisplayGroup.SetActive(true);        
+    }
+    public void DrawPokemon()
+    {
+        SfxPlay(sfx.Button);
+        titleGroup.SetActive(false);
+        pokemonDrawGroup.SetActive(true);
+
     }
 
     Dongle MakeDongle()
