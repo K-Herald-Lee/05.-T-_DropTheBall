@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     public Text textSubScore;
     public GameObject line;
 
+    [Header("----------[ Pokemon ]")]
+    public int pokeballCnt;
+
     
     private void Awake() 
     {
@@ -53,6 +56,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("BestScore", 0);
         }
         textBestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
+
+        //Pokeball init
+        if(!PlayerPrefs.HasKey("pokeballCnt")){
+            PlayerPrefs.SetInt("pokeballCnt", 0);
+        }else{
+            pokeballCnt = PlayerPrefs.GetInt("pokeballCnt");
+        }
 
     }
     public void GameStart()
@@ -159,7 +169,11 @@ public class GameManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("BestScore")){
             PlayerPrefs.SetInt("BestScore",score);
         }
-        textSubScore.text = "점수: " + score.ToString();                 
+        textSubScore.text = "점수: " + score.ToString();    
+
+        // get 1 pokeball per 500 points
+        pokeballCnt += score / 500;              
+        PlayerPrefs.SetInt("pokeballCnt",pokeballCnt);
     }
 
     public void Restart()

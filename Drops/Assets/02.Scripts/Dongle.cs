@@ -121,8 +121,8 @@ public class Dongle : MonoBehaviour
                     float otherPositionX = other.transform.position.x;
                     float otherPositionY = other.transform.position.y;
 
-                    if (myPositionY >= otherPositionY ||
-                    (myPositionY >= otherPositionY && myPositionX > otherPositionX)){
+                    if (myPositionY > otherPositionY ||
+                    (myPositionY == otherPositionY && myPositionX > otherPositionX)){
                         //hide opponent
                         other.Hide(transform.position);
                         
@@ -130,7 +130,7 @@ public class Dongle : MonoBehaviour
                         LevelUp();
                     }
                 }
-
+                
                 //when its level reaches 7, hide touched other dongles
                 if (level > 6){
                     other.Hide(transform.position);
@@ -205,10 +205,12 @@ public class Dongle : MonoBehaviour
         manager.SfxPlay(GameManager.sfx.LevelUP);
         yield return new WaitForSeconds(0.25f);        
         level++; // avoid to multiple level up
+
         manager.maxLevel = Mathf.Max(level, manager.maxLevel);
 
         if (level > 6){
             yield return new WaitForSeconds(1f);
+            manager.pokeballCnt++;
             Hide(transform.position);
         }
         PlayEffect();
