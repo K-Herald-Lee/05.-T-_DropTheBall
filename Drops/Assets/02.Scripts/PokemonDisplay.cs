@@ -9,7 +9,9 @@ public class PokemonDisplay : MonoBehaviour
     public List<GameObject> gradePoolList;
     public GameObject image;
     public Sprite spriteNull;
-    public int listCursor;
+    public Text pokemonName;
+    public Text pokemonGrade;
+    private int listCursor;
     
     private void OnEnable() 
     {
@@ -27,6 +29,8 @@ public class PokemonDisplay : MonoBehaviour
     {
         if(unlockedPokemons.Count > 0){
             image.GetComponent<Image>().sprite = unlockedPokemons[listCursor].image;
+            pokemonName.text = unlockedPokemons[listCursor].name;
+            pokemonGrade.text = unlockedPokemons[listCursor].grade;
         }
     }
     public void listNext()
