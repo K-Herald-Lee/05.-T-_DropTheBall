@@ -25,11 +25,18 @@ public class PokemonDisplay : MonoBehaviour
 
     void LateUpdate()
     {
-        if(unlockedPokemons.Count == 0){
-            //image.GetComponent<Image>().sprite = spriteNull;
-        } else {
+        if(unlockedPokemons.Count > 0){
             image.GetComponent<Image>().sprite = unlockedPokemons[listCursor].image;
         }
-        
+    }
+    public void listNext()
+    {
+        listCursor = (listCursor + 1) % (unlockedPokemons.Count);
+        Debug.Log("list cursor: "+listCursor);
+        Debug.Log("pokemon list count: "+unlockedPokemons.Count);
+    }
+    public void listPrevious()
+    {
+        listCursor = (listCursor + unlockedPokemons.Count - 1) % (unlockedPokemons.Count);
     }
 }

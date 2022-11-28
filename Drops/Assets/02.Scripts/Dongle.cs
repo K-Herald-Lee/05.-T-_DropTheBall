@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dongle : MonoBehaviour
 {
     public GameManager manager;
+    public PokemonManager pokemonManager;
     public ParticleSystem effect;
     public bool isDrag;
     public bool isMerge;
@@ -210,7 +211,8 @@ public class Dongle : MonoBehaviour
 
         if (level > 6){
             yield return new WaitForSeconds(1f);
-            manager.pokeballCnt++;
+            int ball = PlayerPrefs.GetInt("pokeballCnt") + 1;
+            PlayerPrefs.SetInt("pokeballCnt",ball);
             Hide(transform.position);
         }
         PlayEffect();

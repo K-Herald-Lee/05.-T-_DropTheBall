@@ -9,9 +9,17 @@ public class PokemonManager : MonoBehaviour
     public List<GameObject> gradePoolList;
     public GameObject gradePool;
     public GameObject imagePokemon;
+    public int pokeballCnt;
     
     private void Awake() 
     {
+        //Pokeball init
+        if(!PlayerPrefs.HasKey("pokeballCnt")){
+            PlayerPrefs.SetInt("pokeballCnt", 0);
+        }else{
+            pokeballCnt = PlayerPrefs.GetInt("pokeballCnt");
+        }
+
         for(int i=0; i<gradePoolList.Count; i++){ 
             for (int j=0; j<gradePoolList[i].GetComponent<PokemonSelector>().pool.Count; j++){
                 Pokemon pokemon = gradePoolList[i].GetComponent<PokemonSelector>().pool[j];
@@ -30,9 +38,9 @@ public class PokemonManager : MonoBehaviour
     }
     public void GetPokemon()
     {
-        //int ball = PlayerPrefs.GetInt("pokeballCnt");
-        //if (ball > 0){
-        //    ball--;
+        
+        if (pokeballCnt > 0){
+            pokeballCnt--;
             gradePool = setPool();
             Debug.Log(gradePool.gameObject.name);
             Pokemon pokemon = gradePool.GetComponent<PokemonSelector>().PickPokemon();
@@ -41,8 +49,8 @@ public class PokemonManager : MonoBehaviour
             pokemon.unlock = true;
             PlayerPrefs.SetInt(pokemon.name+"unlock",1);
 
-        //    PlayerPrefs.SetInt("pokeballCnt",ball);
-        //}
+            PlayerPrefs.SetInt("pokeballCnt",pokeballCnt);
+        }
         
     }
     public GameObject setPool()
@@ -58,6 +66,5 @@ public class PokemonManager : MonoBehaviour
             i = 2;            
         }        
         return gradePoolList[i];
-    }
-    
+    }    
 }

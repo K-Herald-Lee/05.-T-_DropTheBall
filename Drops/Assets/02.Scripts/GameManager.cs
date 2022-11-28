@@ -40,10 +40,7 @@ public class GameManager : MonoBehaviour
     public Text textScore;
     public Text textBestScore;
     public Text textSubScore;
-    public GameObject line;
-
-    [Header("----------[ Pokemon ]")]
-    public int pokeballCnt;
+    public GameObject line;    
 
     
     private void Awake() 
@@ -58,14 +55,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("BestScore", 0);
         }
         textBestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
-
-        //Pokeball init
-        if(!PlayerPrefs.HasKey("pokeballCnt")){
-            PlayerPrefs.SetInt("pokeballCnt", 0);
-        }else{
-            pokeballCnt = PlayerPrefs.GetInt("pokeballCnt");
-        }
-
     }
     public void GameStart()
     {
@@ -194,9 +183,15 @@ public class GameManager : MonoBehaviour
         }
         textSubScore.text = "점수: " + score.ToString();    
 
-        // get 1 pokeball per 500 points
-        pokeballCnt += score / 500;              
-        PlayerPrefs.SetInt("pokeballCnt",pokeballCnt);
+        // get 1 pokeball per 100 points
+        int pokeballCnt = score / 100;
+        int storedBall = PlayerPrefs.GetInt("pokeballCnt");
+        PlayerPrefs.SetInt("pokeballCnt",storedBall+pokeballCnt);
+    }
+
+    public void SfxPlayButton()
+    {
+        SfxPlay(sfx.Button);
     }
 
     public void Restart()
