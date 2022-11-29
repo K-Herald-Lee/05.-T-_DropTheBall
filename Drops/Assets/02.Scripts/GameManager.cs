@@ -35,10 +35,12 @@ public class GameManager : MonoBehaviour
     [Header("----------[ UI ]")]
     public GameObject gameoverGroup;
     public GameObject titleGroup;
+    public GameObject pokemonDisplayGroup;
+    public GameObject pokemonDrawGroup;
     public Text textScore;
     public Text textBestScore;
     public Text textSubScore;
-    public GameObject line;
+    public GameObject line;    
 
     
     private void Awake() 
@@ -53,7 +55,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("BestScore", 0);
         }
         textBestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
-
     }
     public void GameStart()
     {
@@ -66,6 +67,27 @@ public class GameManager : MonoBehaviour
         SfxPlay(sfx.Button);
         bgmPlayer.Play();        
         GenDongle();
+    }
+    public void Menu()
+    {
+        SfxPlay(sfx.Button);
+        pokemonDisplayGroup.SetActive(false);
+        pokemonDrawGroup.SetActive(false);
+        titleGroup.SetActive(true);
+    }
+
+    public void ShowPokemon()
+    {
+        SfxPlay(sfx.Button);
+        titleGroup.SetActive(false);
+        pokemonDisplayGroup.SetActive(true);        
+    }
+    public void DrawPokemon()
+    {
+        SfxPlay(sfx.Button);
+        titleGroup.SetActive(false);
+        pokemonDrawGroup.SetActive(true);
+
     }
 
     Dongle MakeDongle()
@@ -103,7 +125,7 @@ public class GameManager : MonoBehaviour
     {
         if(!isGameOver){
             lastDongle = InitDongle();
-            lastDongle.level = Random.Range(0, maxLevel);
+            lastDongle.level = Random.Range(0, maxLevel-1);
             lastDongle.gameObject.SetActive(true);
             
             SfxPlay(sfx.Next);
@@ -159,7 +181,17 @@ public class GameManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("BestScore")){
             PlayerPrefs.SetInt("BestScore",score);
         }
-        textSubScore.text = "점수: " + score.ToString();                 
+        textSubScore.text = "점수: " + score.ToString();    
+
+        // get 1 pokeball per 100 points
+        int pokeballCnt = score / 100;
+        int storedBall = PlayerPrefs.GetInt("pokeballCnt");
+        PlayerPrefs.SetInt("pokeballCnt",storedBall+pokeballCnt);
+    }
+
+    public void SfxPlayButton()
+    {
+        SfxPlay(sfx.Button);
     }
 
     public void Restart()
