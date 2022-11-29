@@ -259,23 +259,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Ditto
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 3879467a2dc928e4b8960f2638a3855d, type: 3}
     grade: Legendary
     unlock: 0
   - name: Articuno
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 88e03a6789e225948a9e61c42ec31419, type: 3}
     grade: Legendary
     unlock: 0
   - name: Zapdos
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1a92c991e9b0b6b4a9bfaca6c118491b, type: 3}
     grade: Legendary
     unlock: 0
   - name: Moltres
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 90e302c55ab62ed4596312fb1bdca9f4, type: 3}
     grade: Legendary
     unlock: 0
   - name: Mewtwo
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e13489e5062f07445ae62c6fa6a6dca4, type: 3}
+    grade: Legendary
+    unlock: 0
+  - name: Blastoise GigantaMax
+    image: {fileID: 21300000, guid: e7593d98400631c4383969db08589225, type: 3}
+    grade: Legendary
+    unlock: 0
+  - name: Charizard GigantaMax
+    image: {fileID: 21300000, guid: 8f48abb4134f3394e83d9e20c4dbaa14, type: 3}
+    grade: Legendary
+    unlock: 0
+  - name: Mew
+    image: {fileID: 21300000, guid: 4e80f2e25e66c0e42ac09b2d091f6d05, type: 3}
     grade: Legendary
     unlock: 0
 --- !u!1 &93658789
@@ -913,6 +925,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &307660712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307660713}
+  - component: {fileID: 307660715}
+  - component: {fileID: 307660714}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &307660713
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307660712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1327884440}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 25, y: 6}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &307660714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307660712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 89708da6ae2100e4eb0bd70a85206143, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Pokemon Edition
+--- !u!222 &307660715
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307660712}
+  m_CullTransparentMesh: 1
 --- !u!1 &320019474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,11 +1145,11 @@ RectTransform:
   m_Children:
   - {fileID: 362826942}
   m_Father: {fileID: 1327884440}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 180, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333653818
@@ -1374,31 +1466,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Venosaur
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 0a716d40982fdf24b8ae2092f56945ad, type: 3}
     grade: Epic
     unlock: 0
   - name: Charizard
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: c01f9c9bd702b244bb2bdb25e13b63d5, type: 3}
     grade: Epic
     unlock: 0
   - name: Blastoise
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: b025a4351f216a94283e1edf81f77aa6, type: 3}
     grade: Epic
     unlock: 0
   - name: Clefable
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: f5d5edf7391b85b43b8af281b560f854, type: 3}
     grade: Epic
     unlock: 0
   - name: Tauros
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: aaa4e39ef51ce404da9a11ccfb3c9e06, type: 3}
     grade: Epic
     unlock: 0
   - name: Omastar
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 6941ddcfad177b340b34e027da39c2e8, type: 3}
     grade: Epic
     unlock: 0
   - name: Dragonite
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 680d2f0e5800dd84f8dc984f9479004a, type: 3}
     grade: Epic
     unlock: 0
 --- !u!1 &393016526
@@ -2089,11 +2181,11 @@ RectTransform:
   m_Children:
   - {fileID: 918601684}
   m_Father: {fileID: 1327884440}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -300}
+  m_AnchoredPosition: {x: 0, y: -320}
   m_SizeDelta: {x: 180, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722432182
@@ -2944,71 +3036,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Beedrill
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 0977f83d71129f242a5139782a3bd74a, type: 3}
     grade: Rare
     unlock: 0
   - name: Jolteon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2ad8a4f12df92ff44ba76826249f59ca, type: 3}
     grade: Rare
     unlock: 0
   - name: Tangela
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 0a48f6cbaf37f7b4191489a5073b30e5, type: 3}
     grade: Rare
     unlock: 0
   - name: Pidgeot
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 393c4ffc950e02a439793df558763a12, type: 3}
     grade: Rare
     unlock: 0
   - name: Flareon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1ba1f36e680e2264abbc89862313ed7e, type: 3}
     grade: Rare
     unlock: 0
   - name: Weepinbell
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1b23b87eafd859a46a9614b0f35514fe, type: 3}
     grade: Rare
     unlock: 0
   - name: Magmar
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1d65a28c51ec3b14fa6f142fbd0ebd52, type: 3}
     grade: Rare
     unlock: 0
   - name: Pinsir
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 78a7dc0918002f847a8fcbb263f08790, type: 3}
     grade: Rare
     unlock: 0
   - name: Kingler
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: a3da2c95c230f594e934f1be4f995a76, type: 3}
     grade: Rare
     unlock: 0
   - name: Snorlax
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 10f08fa054f45464dbb492f42e8f2251, type: 3}
     grade: Rare
     unlock: 0
   - name: Rhydon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 390c18cb4e3e057409bb4fbea75410e6, type: 3}
     grade: Rare
     unlock: 0
   - name: Slowbro
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: da2adf078d42c394d8c0f82b03079d69, type: 3}
     grade: Rare
     unlock: 0
   - name: Rapidash
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: d725a23387bb053459e36e0a8e9ea460, type: 3}
     grade: Rare
     unlock: 0
   - name: Mr.Mime
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 92996a4008199ae49895a17738dc3e0c, type: 3}
     grade: Rare
     unlock: 0
   - name: Arcanine
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: d9bc055186a7dd841b98e4e3e8a0974f, type: 3}
     grade: Rare
     unlock: 0
   - name: Farfetch'd
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 0dea6e43ae311c84180b3c778e20e936, type: 3}
     grade: Rare
     unlock: 0
   - name: Muk
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 7a642b94d265d2e4799368e301c30269, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Butterfee GigantaMax
+    image: {fileID: 21300000, guid: 322a777652993ad44af039a333a94ef6, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Crobat
+    image: {fileID: 21300000, guid: 5d8822c7c9876dc4baf0c66965bde5c0, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Dugtrio
+    image: {fileID: 21300000, guid: 663c5a161df336042950eb263e5908c7, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Dugtrio_Alora
+    image: {fileID: 21300000, guid: f6a81e00bdf6a9d448aa6a0b654eb55b, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Gengar GigantaMax
+    image: {fileID: 21300000, guid: cf0ded2804dfef04dabc5a84af4f2a76, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Machamp GigantaMax
+    image: {fileID: 21300000, guid: f7af34e7c3aa59f46b5e1a1f7d69fa3d, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Vileplume
+    image: {fileID: 21300000, guid: 4b921ea5afcded947bcba3cfdc9886c2, type: 3}
+    grade: Rare
+    unlock: 0
+  - name: Seel
+    image: {fileID: 21300000, guid: 5e3f0123b912cdb4aaccbad22b0548b4, type: 3}
     grade: Rare
     unlock: 0
 --- !u!222 &963900809
@@ -3169,107 +3293,131 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Butterfree
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: a8a08aa7f14227c4099699d65e6cf9cb, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Golduck
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: c29e69bbe91bf50479d4d744582747a9, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Dratini
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: d498d72924a92fa419a2339c8d783c37, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Seaking
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 00b32d1da30ccc448841fdb20cbe7100, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Fearow
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 9a366c20dfae90f49a4a65869cea2178, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Primeape
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 51b19dddf7e448a4ab979510a21abd98, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Dodrio
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1895f597818b03b4db7f761fd7f50759, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Starmie
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 7208791b28f38a145994cdc5669b83e7, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Nidorina
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: ecb0a017d7070764ebf3f74304faf8e9, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Chansey
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 8e3ffed4fb48ac84daf7c978485fa957, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Cloyster
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2f02014ac22cd4f40aced16cb4a52b62, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Nidorino
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: a0d90e52b3b4c964d861a6a30ff1aecc, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Poliwhirl
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 4b33fd1c9cfb59641b1440cd1f89a9ce, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Scyther
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: f225d4dafd5837b4393009b4a01a978f, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Ninetales
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 276cba16dc3d9024ea7d90ee2137a305, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Ninetales_Alora
+    image: {fileID: 21300000, guid: 1c4ec9aa6c15837408179aa2992a7f3f, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Kadabra
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 96abc181519a97a4497c3d84f5617fb8, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Hypno
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 5674c3431515c524892e0dc37c620142, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Wigglytuff
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: b78cb82820c98ee438ac234a860fdc17, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Machamp
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 1fb99083eaf05bf40aee8db29cd13f64, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Seadra
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: b71a0346885c37b4894eb6151ca3b7ae, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Gloom
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: a995a1be7fe439f498cedd0d728f9ce5, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Tentacruel
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e259399af65a79f4e874752e2365bf07, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Hitmonchan
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 5c5b16321e4771643894337b12f3d74d, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Parasect
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 33e96569725a25749930325d6d0f7030, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Golem
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 75a6d935138eab640a5c35d44049e1ab, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Golem_Alora
+    image: {fileID: 21300000, guid: b9d52da998ff35b4a88df80355bcd297, type: 3}
     grade: Uncommon
     unlock: 0
   - name: Lickitung
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 9a74b645635701f40855d8fa9b3cce67, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Pikachu GigantaMax
+    image: {fileID: 21300000, guid: c31048beca55f4844933047705e4d499, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Exeggutor
+    image: {fileID: 21300000, guid: 8576fd560459f13419efaa63b6a51d7c, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Exeggutor_Alora
+    image: {fileID: 21300000, guid: 47d335c68a8f9cd4bbd8c4f5106e94c6, type: 3}
+    grade: Uncommon
+    unlock: 0
+  - name: Eevee GigantaMax
+    image: {fileID: 21300000, guid: d7bdf24851b85504c8a10a03e0d25503, type: 3}
     grade: Uncommon
     unlock: 0
 --- !u!1 &1115923024
@@ -3332,67 +3480,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Gyarados
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 40fff2d55c5d38246a03cf3f586595fd, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Venomoth
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: a94d9280e1d98944b954ee0afcf35fc4, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Lapras
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 3bcd29fa8245e38438bc2fbade534e2b, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Poliwrath
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 00b65b770bc0f2644abb612e0c89c3f0, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Vaporeon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: f8ff7ebd8c4434d44a85423154d3a3da, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Alakazam
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: ebd8b68cde95dee4386960b775f18da3, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Kabutops
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: eabcf6136570b244e82ad9accab00284, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Electabuzz
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e5692dc6d9d42904c9e8c5ae29b8ca24, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Dragonair
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 3dd362fb4dd85314683da36b796e293e, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Victreebel
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 409e966f5e390c44db3f966bb0b6ff08, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Raichu
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 03102b34cf4d18d4ea5350d235f1ebd3, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Raichu_Alora
+    image: {fileID: 21300000, guid: ccb80d558220c52498ac564511f2f4c0, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Kangaskhan
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 507a8d04591499b4b8e4effe8ef6a41a, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Nidoqueen
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: c312cabef797888448ae10b2ba81fade, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Dewgong
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 64c8097f50f904c4590fbce6791c4da9, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Nidoking
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 5df0f19782e8dae41a0c5b78a5923be3, type: 3}
     grade: SuperRare
     unlock: 0
   - name: Marowak
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: eb49f91d091f48c448f06197d19d7bc2, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Marowak_Alora
+    image: {fileID: 21300000, guid: ab4e88fd828579f42baf10a74f6edef0, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Kabuto
+    image: {fileID: 21300000, guid: e3ded2c2dbf70934bbb3b5afdec61571, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Kingler GigantaMax
+    image: {fileID: 21300000, guid: ec76618de756ce04aaafa2916fc18063, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Snorlax GigantaMax
+    image: {fileID: 21300000, guid: b6947618b7caa794288a39e7cab6f46a, type: 3}
+    grade: SuperRare
+    unlock: 0
+  - name: Tangrowth
+    image: {fileID: 21300000, guid: 1c2fac7201a1ca140bcdf36e331fc346, type: 3}
     grade: SuperRare
     unlock: 0
 --- !u!1 &1180654574
@@ -3426,7 +3598,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1327884440}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3470,6 +3642,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180654574}
+  m_CullTransparentMesh: 1
+--- !u!1 &1193520970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193520971}
+  - component: {fileID: 1193520973}
+  - component: {fileID: 1193520972}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1193520971
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193520970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1327884440}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -40, y: 152}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1193520972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193520970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 62504d67708dbcd488f170cf0d0f27ad, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1193520973
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193520970}
   m_CullTransparentMesh: 1
 --- !u!1 &1193567404
 GameObject:
@@ -4075,10 +4323,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1193520971}
   - {fileID: 1180654575}
   - {fileID: 1536163402}
   - {fileID: 333653817}
   - {fileID: 722432181}
+  - {fileID: 307660713}
   m_Father: {fileID: 320019478}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4473,27 +4723,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Ivysaur
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2cdfdadd238e1c24988fbc217ce86d04, type: 3}
     grade: HyperRare
     unlock: 0
   - name: Charmeleon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: ec3942877e50f5542bc2c7113ebe7b66, type: 3}
     grade: HyperRare
     unlock: 0
   - name: Wartortle
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 293ae7dcd73e2bb4d9440a6332c31f0f, type: 3}
     grade: HyperRare
     unlock: 0
   - name: Porygon
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 337d7c4d7f09ab249aedf41202d5056e, type: 3}
     grade: HyperRare
     unlock: 0
   - name: Omanyte
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 345f50d66d4821846a2d5e8c04a2ae43, type: 3}
     grade: HyperRare
     unlock: 0
   - name: Aerodactyl
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 3e7b66d763ce62745b9276cefc632430, type: 3}
+    grade: HyperRare
+    unlock: 0
+  - name: Kingdra
+    image: {fileID: 21300000, guid: cebe30138b5ec8f4ab71fceafae2a774, type: 3}
+    grade: HyperRare
+    unlock: 0
+  - name: Lapras Gigantamax
+    image: {fileID: 21300000, guid: 7341b4ba80bfd9543af8b72c349a682c, type: 3}
     grade: HyperRare
     unlock: 0
 --- !u!1 &1523800882
@@ -4629,11 +4887,11 @@ RectTransform:
   m_Children:
   - {fileID: 1193567405}
   m_Father: {fileID: 1327884440}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 180, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536163403
@@ -5731,243 +5989,263 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool:
   - name: Caterpie
-    image: {fileID: 21300000, guid: b676c22570a879a4ea34800ac6dda482, type: 3}
+    image: {fileID: 21300000, guid: 6d12c5ba74a377d4882345b852261939, type: 3}
     grade: Common
     unlock: 0
   - name: Weedle
-    image: {fileID: 21300000, guid: 0a1064ef918c04640a2ddaf2f309bb99, type: 3}
+    image: {fileID: 21300000, guid: f040cfe5b3a89af4698ca1e5f78ae69f, type: 3}
     grade: Common
     unlock: 0
   - name: Pdigey
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: c5a573256f39d9f44b8995287c48b21f, type: 3}
     grade: Common
     unlock: 0
   - name: Oddish
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 2966c44e6d3d5fa44baaf3dddf475b06, type: 3}
     grade: Common
     unlock: 0
   - name: Paras
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 9a99721b73bb39441a8e165a9623cbf7, type: 3}
     grade: Common
     unlock: 0
   - name: Venonat
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: f50a1be519c0d5b4eb9c9e770be60f85, type: 3}
     grade: Common
     unlock: 0
   - name: Slowpoke
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 8d4bad23a6b21cf4d8629b13a3606a95, type: 3}
     grade: Common
     unlock: 0
   - name: Magnemite
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 807ca5d3cd19fcb48bced1828f70cb37, type: 3}
     grade: Common
     unlock: 0
   - name: Gastly
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 561de6c3163e4954681637b5c02095a4, type: 3}
     grade: Common
     unlock: 0
   - name: Rattata
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 9343bfd271d0bac408df4576c1f676d1, type: 3}
     grade: Common
     unlock: 0
   - name: Ekans
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: b31baed4f54789a439223c48d3dab4c6, type: 3}
     grade: Common
     unlock: 0
   - name: Sandshrew
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 68fc73d9bb9edbb42afe71372a280ccd, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Sandshrew_Alora
+    image: {fileID: 21300000, guid: ea36e3f837d8e6140bd92fc820588c83, type: 3}
     grade: Common
     unlock: 0
   - name: Nidoran(Female)
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Meowth
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Mankey
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Poliway
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Machop
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Krabby
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Voltorb
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Goldeen
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
-    grade: Common
-    unlock: 0
-  - name: Magikarp
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 8de0bdb22e284ef44be71429dcd40bd0, type: 3}
     grade: Common
     unlock: 0
   - name: Nidoran(Male)
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: ddc47be37c590d14c945578da5888c44, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Meowth
+    image: {fileID: 21300000, guid: 9a18f8ff7200f3940bb55f5b3b4b98d5, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Meowth_Alora
+    image: {fileID: 21300000, guid: 570961c91f372404d91b87505f3d9908, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Mankey
+    image: {fileID: 21300000, guid: 6f2a3541cbdc02642b0468dc820e1d29, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Poliway
+    image: {fileID: 21300000, guid: d969d4fac0e6081489b2d47d0499eea5, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Machop
+    image: {fileID: 21300000, guid: e676cf3aa1c9c9948bd4312bdd8c2de6, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Krabby
+    image: {fileID: 21300000, guid: 943808ac9dd458c4c90924eae715aadc, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Voltorb
+    image: {fileID: 21300000, guid: ace321bd450ba3341b9ac750fccb3755, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Goldeen
+    image: {fileID: 21300000, guid: 8ab97d0d408a32942b397498f9c3bceb, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Magikarp
+    image: {fileID: 21300000, guid: ae1c979d28eec2b4abce188227585e2c, type: 3}
     grade: Common
     unlock: 0
   - name: Bellsprout
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: eec73d5a72f7cd14f996c39ab5650abb, type: 3}
     grade: Common
     unlock: 0
   - name: Eevee
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 1c25a31a7f1edba42825930d6269df96, type: 3}
     grade: Common
     unlock: 0
   - name: Bulbasaur
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 130f3a9964ae2a44eb064ee8fd007cad, type: 3}
     grade: Common
     unlock: 0
   - name: Pikachu
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: be2ceae5c564a374c9f773b912cbc72f, type: 3}
     grade: Common
     unlock: 0
   - name: Growlithe
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 1e223cb01c8363d4db5315548d33164e, type: 3}
     grade: Common
     unlock: 0
   - name: Grimer
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 67d78f7deaa177c408936b0e78ade112, type: 3}
     grade: Common
     unlock: 0
   - name: Rhyhorn
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 8baf736132ccc3a4abc6f69b9d9ca888, type: 3}
     grade: Common
     unlock: 0
   - name: Charmander
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 300475d99edaffe428d62d92d1dc26ad, type: 3}
     grade: Common
     unlock: 0
   - name: Sandslash
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: b5c4419f74df06942ad8e7971107ac80, type: 3}
     grade: Common
     unlock: 0
   - name: Abra
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 103324d2fd54e05468b0cef99d69fb60, type: 3}
     grade: Common
     unlock: 0
   - name: Shellder
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 00027e1e7899efa48bcd4d5a83c30114, type: 3}
     grade: Common
     unlock: 0
   - name: Horsea
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 203adaa49c2ab1246a9504c117ff65d8, type: 3}
     grade: Common
     unlock: 0
   - name: Squirtle
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: d0fd45e4c6bcde845b837d4abf956e49, type: 3}
     grade: Common
     unlock: 0
   - name: Clefairy
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 12d6f34aed48d4b4aaab26da0cddba5b, type: 3}
     grade: Common
     unlock: 0
   - name: Machoke
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: e89cf1a044a26844ea711884b526bc6b, type: 3}
     grade: Common
     unlock: 0
   - name: Haunter
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 2802e20ba2c210746a08a50ea6fa9045, type: 3}
     grade: Common
     unlock: 0
   - name: Staryu
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 2fce88e1d4076d044b2fa4583fcf2d1d, type: 3}
     grade: Common
     unlock: 0
   - name: Metapod
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 6c50eed144096974b9d6cd4a5566fcb3, type: 3}
     grade: Common
     unlock: 0
   - name: Vulpix
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: c808a3c9d8f392c43a97817656872d5c, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Vulpix_Alora
+    image: {fileID: 21300000, guid: 06df2a79acb58f14783f8cee5baef698, type: 3}
     grade: Common
     unlock: 0
   - name: Tentacool
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 0aa78affc0ed8704680f23e4133d63db, type: 3}
     grade: Common
     unlock: 0
   - name: Drowzee
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 7cd89e6d40521bc46bdc57741d3cf327, type: 3}
     grade: Common
     unlock: 0
   - name: Jynx
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 43fdb605c6b0f4e408fa7c367ea7bb45, type: 3}
     grade: Common
     unlock: 0
   - name: Kakuna
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 71e241cc11d2bdd40a98ab89ff5b4a01, type: 3}
     grade: Common
     unlock: 0
   - name: Jigglypuff
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 0b4e80c6bec5fa94a80bc0d60d2f817a, type: 3}
     grade: Common
     unlock: 0
   - name: Graveler
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 0709d912d923da34aba5567288cadd98, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Graveler_Alora
+    image: {fileID: 21300000, guid: c517fb05bf22cdd4fb082476ca6e2053, type: 3}
     grade: Common
     unlock: 0
   - name: Electrode
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: c1e862d59e5d5404994cd860d53abd0a, type: 3}
     grade: Common
     unlock: 0
   - name: Pidgeotto
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 04d2dd08cf3787740acfb4f345c6d44b, type: 3}
     grade: Common
     unlock: 0
   - name: Golbat
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: c358df159d6b3a546bde9f879616302b, type: 3}
     grade: Common
     unlock: 0
   - name: Ponyta
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 66551d6d8bdcb59479eed83f535694ea, type: 3}
     grade: Common
     unlock: 0
   - name: Exeggcute
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 5314580d836093b4c9d5a0e203a51bf4, type: 3}
     grade: Common
     unlock: 0
   - name: Raticate
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 0f46679cd7ba32249b64839ee2fb76bf, type: 3}
     grade: Common
     unlock: 0
   - name: Diglett
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 22f774f756bdfdf42bda7f7df15696c1, type: 3}
+    grade: Common
+    unlock: 0
+  - name: Diglett_Alora
+    image: {fileID: 21300000, guid: ed85b19364fd4bf4e827c70f6399aece, type: 3}
     grade: Common
     unlock: 0
   - name: Magneton
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: fe2e25614df1fec4684a3a1d51768763, type: 3}
     grade: Common
     unlock: 0
   - name: Cubone
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: b317168b9ffab56448e1d8a2cd505b9a, type: 3}
     grade: Common
     unlock: 0
   - name: Spearow
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: df96267f93ba3044fbfd93d7f428f802, type: 3}
     grade: Common
     unlock: 0
   - name: Persian
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 32c0f0a57c279724f91abeda719e2927, type: 3}
     grade: Common
     unlock: 0
   - name: Doduo
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: 12a9419895c6b524192abec7dcb2fd27, type: 3}
     grade: Common
     unlock: 0
   - name: Hitmonlee
-    image: {fileID: 21300000, guid: 2aa180e8a81d6be4286828fd691fe3d8, type: 3}
+    image: {fileID: 21300000, guid: dde81ee9cd1332d4389b28d92dd478fd, type: 3}
     grade: Common
     unlock: 0
 --- !u!1 &2124149305

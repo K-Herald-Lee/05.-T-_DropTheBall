@@ -58,13 +58,21 @@ public class PokemonManager : MonoBehaviour
         int i;
         float cursor = Random.Range(0.01f,1.00f);
 
-        if(cursor < 0.6f){
+        if(cursor < 0.40f){
             i = 0;
-        } else if (cursor < 0.9f){
+        } else if (cursor < 0.60f){
             i = 1;
+        } else if (cursor < 0.75f){
+            i = 2;
+        } else if (cursor < 0.85f){
+            i = 3;
+        } else if (cursor < 0.92f){
+            i = 4;
+        } else if (cursor < 0.97f){
+            i = 5;
         } else {
-            i = 2;            
-        }        
+            i = 6;
+        }       
         return gradePoolList[i];
     }    
 }

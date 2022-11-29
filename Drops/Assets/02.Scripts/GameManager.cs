@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
     {
         if(!isGameOver){
             lastDongle = InitDongle();
-            lastDongle.level = Random.Range(0, maxLevel);
+            lastDongle.level = Random.Range(0, maxLevel-1);
             lastDongle.gameObject.SetActive(true);
             
             SfxPlay(sfx.Next);

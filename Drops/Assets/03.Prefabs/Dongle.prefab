@@ -103,7 +103,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.58
+  m_Radius: 0.59
 --- !u!50 &4923502970965294754
 Rigidbody2D:
   serializedVersion: 4
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  pokemonManager: {fileID: 0}
   effect: {fileID: 0}
   isDrag: 0
   isMerge: 0

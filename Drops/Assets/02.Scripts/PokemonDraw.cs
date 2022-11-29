@@ -30,7 +30,7 @@ public class PokemonDraw : MonoBehaviour
     
     public void TouchDown()
     {        
-        rotateSpeed -= 3;
+        rotateSpeed -= 5;
         transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 
         if (rotateSpeed < -900){
